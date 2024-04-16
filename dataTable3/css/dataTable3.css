@@ -1,0 +1,239 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+[x-cloak][data-type=dataTable3] {
+  display: none !important;
+}
+
+#dataTable3 {
+  transition: 0.3s;
+  padding: 10px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+#dataTable3::-webkit-scrollbar {
+  width: 3px;
+  height: 10px;
+  border-radius: 6px;
+}
+#dataTable3::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+#dataTable3::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#dataTable3::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+#dataTable3 .toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+#dataTable3 .toolbar .search, #dataTable3 .toolbar .limit {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#dataTable3 .toolbar .search input[type=text], #dataTable3 .toolbar .search input[type=date], #dataTable3 .toolbar .search select, #dataTable3 .toolbar .search input[type=number], #dataTable3 .toolbar .limit input[type=text], #dataTable3 .toolbar .limit input[type=date], #dataTable3 .toolbar .limit select, #dataTable3 .toolbar .limit input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin-right: 8px;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  box-sizing: border-box;
+  height: 44px;
+}
+#dataTable3 .toolbar .search .line, #dataTable3 .toolbar .limit .line {
+  width: 20px;
+  height: 2px;
+  background-color: #000;
+  display: block;
+  margin-top: 7px;
+  margin-right: 8px;
+}
+#dataTable3 .toolbar .search > button, #dataTable3 .toolbar .limit > button {
+  width: 50.64px;
+  height: 45.64px;
+  margin-left: 5px;
+  background-color: #0093FF;
+  color: #777;
+}
+#dataTable3 .toolbar .limit {
+  margin-right: auto;
+}
+#dataTable3 .dataTable {
+  box-shadow: 0 3px 6px #ddd;
+  table-layout: fixed;
+  width: 100%;
+}
+#dataTable3 .dataTable > thead tr {
+  background-color: #fff;
+  color: #111;
+}
+#dataTable3 .dataTable > thead tr th {
+  cursor: pointer;
+  padding: 15px 10px;
+  border: 1px #ddd solid;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+#dataTable3 .dataTable > thead tr th > i {
+  font-size: 12px;
+  margin-left: 5px;
+  transition: 0.3s;
+  animation: show 0.3s linear;
+  transform: scale(1) rotate(0deg);
+}
+#dataTable3 .dataTable > thead tr th > i.sort {
+  transform: scale(1) rotate(540deg);
+}
+@keyframes show {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+#dataTable3 .dataTable > tbody.notfound tr {
+  background-color: rgb(250, 250, 250);
+}
+#dataTable3 .dataTable > tbody.notfound td {
+  text-align: center;
+  padding: 50px 0;
+  color: #777;
+  font-size: 14px;
+  border: 1px #ddd solid;
+}
+#dataTable3 .dataTable > tbody tr:nth-child(even) {
+  background-color: #F2F2F2;
+}
+#dataTable3 .dataTable > tbody tr td {
+  padding: 15px 7px;
+  border: 1px rgb(230, 230, 230) solid;
+  word-break: break-all;
+}
+#dataTable3 .dataTable > tbody tr td.nowrap {
+  white-space: nowrap;
+}
+#dataTable3 .pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+#dataTable3 .pagination small {
+  color: #111;
+  font-size: 13px;
+}
+#dataTable3 .pagination .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#dataTable3 .pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+#dataTable3 .pagination a.active {
+  background-color: #0093FF;
+  color: #fff;
+}
+#dataTable3 .pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+#dataTable3 .pagination a.disabled {
+  cursor: not-allowed;
+}
+#dataTable3 .pagination a.disabled:hover:not(.active) {
+  background-color: transparent;
+}
+#dataTable3 .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#dataTable3 .loading .loader {
+  border: 5px solid #ddd !important;
+  border-top: 5px solid #666 !important;
+  border-radius: 50% !important;
+  width: 30px !important;
+  height: 30px !important;
+  animation: spin 2s linear infinite !important;
+  display: block;
+}
+#dataTable3 .chart-data {
+  display: grid;
+  grid-template-columns: repeat(4, calc(25% - 2em));
+  grid-column-gap: 2em;
+  grid-row-gap: 1em;
+  width: 100%;
+  justify-content: center;
+  margin: 50px 0;
+}
+#dataTable3 .chart-data > .column {
+  padding: 15px;
+  box-shadow: 0 3px 6px #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#dataTable3 .chart-data > .column h5 {
+  font-weight: 600;
+  font-size: 17px;
+}
+#dataTable3 .chart-data > .column p {
+  font-size: 30px;
+}
+#dataTable3 .chart-data > .column .visits-col {
+  display: flex;
+  align-items: center;
+}
+#dataTable3 .copyright {
+  opacity: 0.5;
+  color: #f00;
+  text-align: center;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+.topBtn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0093FF;
+  color: #777;
+  z-index: 9999;
+  cursor: pointer;
+}
+.topBtn:hover {
+  text-decoration: none;
+  color: #777;
+}/*# sourceMappingURL=dataTable3.css.map */
